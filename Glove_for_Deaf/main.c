@@ -2,7 +2,7 @@
  * Glove_for_Deaf.c
  *
  * Created: 6/8/2022 8:07:04 PM
- * Author : yasse
+ * Author : Yasser & Mahmoud
  */ 
 
 //#include <avr/io.h>

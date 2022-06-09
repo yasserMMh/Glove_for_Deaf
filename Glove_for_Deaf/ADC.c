@@ -2,7 +2,7 @@
  * ADC.c
  *
  * Created: 3/25/2022 10:44:47 AM
- *  Author: Arrow
+ *  Author: Yasser & Mahmoud
  */ 
 
 #include "ADC.h"

@@ -2,7 +2,7 @@
  * LCD_Cfg.h
  *
  * Created: 3/5/2022 10:41:46 PM
- *  Author: Arrow
+ *  Author: Yasser & Mahmoud
  */ 
 
 

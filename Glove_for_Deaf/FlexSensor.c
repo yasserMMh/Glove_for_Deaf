@@ -2,7 +2,7 @@
  * FlexSensor.c
  *
  * Created: 6/8/2022 8:15:08 PM
- *  Author: yasser & Mahmoud
+ *  Author: Yasser & Mahmoud
  */ 
 
 #include "FlexSensor.h"

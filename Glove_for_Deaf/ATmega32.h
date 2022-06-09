@@ -2,7 +2,7 @@
  * ATmega32.h
  *
  * Created: 3/5/2022 9:47:13 AM
- *  Author: Arrow
+ *  Author: Yasser & Mahmoud
  */ 
 
 

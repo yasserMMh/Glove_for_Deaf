@@ -2,7 +2,7 @@
  * ADC_Cfg.h
  *
  * Created: 3/25/2022 10:44:34 AM
- *  Author: Arrow
+ *  Author: Yasser & Mahmoud
  */ 
 
 

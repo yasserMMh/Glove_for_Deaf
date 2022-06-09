@@ -2,7 +2,7 @@
  * LCD.c
  *
  * Created: 3/5/2022 10:42:02 PM
- *  Author: Arrow
+ *  Author: Yasser & Mahmoud
  */ 
 
 #include "LCD.h"

@@ -1,10 +1,10 @@
-DIO.d DIO.o: .././DIO.c .././DIO.h .././ATmega32.h .././math_bits.h \
- .././STD_TYPES.h
+DIO.d DIO.o: .././DIO.c .././DIO.h .././ATMEGA32_Regs.h .././STD.h \
+ .././Bit_Math.h
 
 .././DIO.h:
 
-.././ATmega32.h:
+.././ATMEGA32_Regs.h:
 
-.././math_bits.h:
+.././STD.h:
 
-.././STD_TYPES.h:
+.././Bit_Math.h:

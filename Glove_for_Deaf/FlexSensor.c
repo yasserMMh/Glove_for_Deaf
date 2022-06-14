@@ -12,97 +12,180 @@ void FlexSensor_Init(void)
 	ADC_Init();
 }
 
-Uint8 FlexSensor_Read(Uint8 channel)
+uint16 FlexSensor_Read(uint8 channel)
 {
 	ADC_Select_Channel(channel);
 	
-	Uint8 V_Input = 0;
-	Uint8 result = 0;
+	uint16 V_Input = 0;
+	uint16 res = 0;
 	
 	V_Input = ADC_ReadAnalogValue();
 	
-	result = V_Input * 5;
+	res = V_Input / 1;
 	
-	return result;
+	if(channel == 0 || channel == 1 || channel == 2 || channel == 3 || channel == 4) res /= 10;
+	
+	return res;
 }
 
-void FlexSensor_Set_Word(Uint16 finger1, Uint16 finger2, Uint16 finger3, Uint16 finger4, Uint16 finger5)
+void FlexSensor_Set_Word(uint16 finger1, uint16 finger2, uint16 finger3, uint16 finger4, uint16 finger5)
 {
 	LCD_Clear();
 	
-	if(finger1 > 2.5 && finger2 > 2.5 && finger3 > 2.5 && finger4 > 2.5 && finger5 > 2.5)
+	if(finger1 > 3 )
 	{
-		Uint8* word1 = "stop";
+		uint8* word1 = "stop";
 		LCD_WriteString(word1);
 	}
-	else if(finger1 < 0.1 && finger2 > 2.5 && finger3 < 0.1 && finger4 < 0.1 && finger5 < 0.1)
+	else if(finger2 > 3)
 	{
-		Uint8* word2 = "one";
+		uint8* word2 = "hi";
 		LCD_WriteString(word2);
 	}
-	else if(finger1 > 2.5 && finger2 > 2.5 && finger3 < 0.1 && finger4 < 0.1 && finger5 < 0.1)
+	else if(finger3 > 3)
 	{
-		Uint8* word3 = "two";
+		uint8* word3 = "welcome";
 		LCD_WriteString(word3);
 	}
-	else if(finger1 > 2.5 && finger2 > 2.5 && finger3 > 2.5 && finger4 < 0.1 && finger5 < 0.1)
+	else if(finger4 > 3)
 	{
-		Uint8* word4 = "three";
+		uint8* word4 = "go";
 		LCD_WriteString(word4);
 	}
-	else if(finger1 > 2.5 && finger2 > 2.5 && finger3 > 2.5 && finger4 > 2.5 && finger5 < 0.1)
+	else if(finger5 > 3)
 	{
-		Uint8* word5 = "four";
+		uint8* word5 = "return";
 		LCD_WriteString(word5);
 	}
-	else if(finger1 < 0.1 && finger2 > 2.5 && finger3 < 0.1 && finger4 < 0.1 && finger5 > 2.5)
+	else if(finger1 > 2)
 	{
-		Uint8* word6 = "love";
+		uint8* word6 = "love";
 		LCD_WriteString(word6);
 	}
-	else if(finger1 < 0.1 && finger2 > 2.5 && finger3 < 0.1 && finger4 > 2.5 && finger5 < 0.1)
+	else if(finger2 > 2)
 	{
-		Uint8* word7 = "ok";
+		uint8* word7 = "ok";
 		LCD_WriteString(word7);
 	}
-	else if(finger1 < 0.1 && finger2 > 2.5 && finger3 > 2.5 && finger4 < 0.1 && finger5 < 0.1)
+	else if(finger3 > 2)
 	{
-		Uint8* word8 = "where";
+		uint8* word8 = "where";
 		LCD_WriteString(word8);
 	}
-	else if(finger1 < 0.1 && finger2 > 2.5 && finger3 < 0.1 && finger4 < 0.1 && finger5 < 0.1)
+	else if(finger4 > 2)
 	{
-		Uint8* word9 = "move";
+		uint8* word9 = "move";
 		LCD_WriteString(word9);
 	}
-	else if(finger1 < 0.1 && finger2 < 2 && finger3 < 0.1 && finger4 < 0.1 && finger5 < 0.1)
+	else if(finger5 > 2)
 	{
-		Uint8* word10 = "well";
+		uint8* word10 = "well";
 		LCD_WriteString(word10);
 	}
-	else if(finger1 < 0.1 && finger2 > 2.5 && finger3 > 0.1 && finger4 < 0.1 && finger5 < 0.1)
+	else if(finger1 > 1)
 	{
-		Uint8* word11 = "you";
+		uint8* word11 = "you";
 		LCD_WriteString(word11);
 	}
-	else if(finger1 > 0.3 && finger2 > 2.5 && finger3 < 0.1 && finger4 < 0.1 && finger5 < 0.1)
+	else if(finger2 > 1)
 	{
-		Uint8* word12 = "me";
+		uint8* word12 = "me";
 		LCD_WriteString(word12);
 	}
-	else if(finger1 < 0.1 && finger2 > 2.5 && finger3 > 1.2 && finger4 < 0.1 && finger5 < 0.1)
+	else if(finger3 > 1)
 	{
-		Uint8* word13 = "what";
+		uint8* word13 = "what";
 		LCD_WriteString(word13);
 	}
-	else if(finger1 < 0.1 && finger2 > 2.5 && finger3 < 0.1 && finger4 > 2 && finger5 < 0.1)
+	else if(finger4 > 1)
 	{
-		Uint8* word14 = "when";
+		uint8* word14 = "when";
 		LCD_WriteString(word14);
 	}
-	else if(finger1 < 0.1 && finger2 > 2.5 && finger3 < 0.1 && finger4 > 0.3 && finger5 < 0.1)
+	else if(finger5 > 1)
 	{
-		Uint8* word15 = "how";
+		uint8* word15 = "how";
 		LCD_WriteString(word15);
+	}
+}
+
+void FlexSensor_Set_Word_diff_mode(uint16 finger1_2, uint16 finger3_4, uint16 finger5_0)
+{
+	LCD_Clear();
+	
+	if(finger1_2 > 45 )
+	{
+		uint8* word1 = "stop";
+		LCD_WriteString(word1);
+	}
+	else if(finger1_2 > 40)
+	{
+		uint8* word3 = "welcome";
+		LCD_WriteString(word3);
+	}
+	else if(finger1_2 > 35)
+	{
+		uint8* word4 = "go";
+		LCD_WriteString(word4);
+	}
+	else if(finger1_2 > 30)
+	{
+		uint8* word5 = "return";
+		LCD_WriteString(word5);
+	}
+	else if(finger1_2 > 25)
+	{
+		uint8* word6 = "love";
+		LCD_WriteString(word6);
+	}
+	else if(finger1_2 > 20)
+	{
+		uint8* word7 = "ok";
+		LCD_WriteString(word7);
+	}
+	else if(finger1_2 > 15)
+	{
+		uint8* word8 = "where";
+		LCD_WriteString(word8);
+	}
+	else if(finger1_2 > 10)
+	{
+		uint8* word9 = "move";
+		LCD_WriteString(word9);
+	}
+	else if(finger3_4 > 40)
+	{
+		uint8* word10 = "well";
+		LCD_WriteString(word10);
+	}
+	else if(finger3_4 > 35)
+	{
+		uint8* word11 = "you";
+		LCD_WriteString(word11);
+	}
+	else if(finger3_4 > 30)
+	{
+		uint8* word12 = "me";
+		LCD_WriteString(word12);
+	}
+	else if(finger3_4 > 25)
+	{
+		uint8* word13 = "what";
+		LCD_WriteString(word13);
+	}
+	else if(finger3_4 > 15)
+	{
+		uint8* word14 = "when";
+		LCD_WriteString(word14);
+	}
+	else if(finger5_0 > 3)
+	{
+		uint8* word15 = "how";
+		LCD_WriteString(word15);
+	}
+	else if(finger5_0 > 2)
+	{
+		uint8* word2 = "hi";
+		LCD_WriteString(word2);
 	}
 }

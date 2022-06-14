@@ -15,8 +15,9 @@
 #include "LCD.h"
 
 void FlexSensor_Init(void);
-Uint8 FlexSensor_Read(Uint8 channel);
-void FlexSensor_Set_Word(Uint16 finger1, Uint16 finger2, Uint16 finger3, Uint16 finger4, Uint16 finger5);
+uint16 FlexSensor_Read(uint8 channel);
+void FlexSensor_Set_Word(uint16 finger1, uint16 finger2, uint16 finger3, uint16 finger4, uint16 finger5); // single ended mode
+void FlexSensor_Set_Word_diff_mode(uint16 finger1_2, uint16 finger3_4, uint16 finger5_0);  // differential mode
 
 
 

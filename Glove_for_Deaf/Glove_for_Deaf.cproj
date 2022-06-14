@@ -30,15 +30,15 @@
     <EraseKey />
     <AsfFrameworkConfig>
       <framework-data xmlns="">
-  <options />
-  <configurations />
-  <files />
-  <documentation help="" />
-  <offline-documentation help="" />
-  <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.40.0" />
-  </dependencies>
-</framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.40.0" />
+        </dependencies>
+      </framework-data>
     </AsfFrameworkConfig>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -129,7 +129,10 @@
     <Compile Include="ADC_Cfg.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="ATmega32.h">
+    <Compile Include="ATMEGA32_Regs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BIT_Math.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="DIO.c">
@@ -156,10 +159,7 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="math_bits.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="STD_TYPES.h">
+    <Compile Include="STD.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
